@@ -1,7 +1,8 @@
 import java.util.Date;
+import java.util.UUID;
 
 public abstract class Midia {
-    private int id;
+    private String id;
     private String titulo;
     private String caminho;
     private Date data;
@@ -10,12 +11,24 @@ public abstract class Midia {
     private float tamanho;
     private boolean favorito;
 
-    public int getId() {
-        return id;
+    public Midia() {
+        this.id = UUID.randomUUID().toString();
+        this.data = new Date();
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public Midia(String titulo, String caminho, String formato, String localizacao, float tamanho, boolean favorito) {
+        this.id = UUID.randomUUID().toString();
+        this.titulo = titulo;
+        this.caminho = caminho;
+        this.data = new Date();
+        this.formato = formato;
+        this.localizacao = localizacao;
+        this.tamanho = tamanho;
+        this.favorito = favorito;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getTitulo() {
@@ -75,22 +88,22 @@ public abstract class Midia {
     }
 
     public void compartilhar() {
-
+        System.out.println("Compartilhando mídia: " + titulo);
     }
 
     public void editar(String tituloNovo) {
-
+        this.titulo = tituloNovo;
     }
 
     public void apagar() {
-
+        System.out.println("Mídia apagada: " + titulo);
     }
 
     public void marcarFavorito() {
-
+        this.favorito = true;
     }
 
     public void desmarcarFavorito() {
-
+        this.favorito = false;
     }
 }

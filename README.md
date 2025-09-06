@@ -17,7 +17,7 @@ Aqui você encontrará as implementações práticas e diagramas aplicando os pr
 ## 📐 Diagrama de Classes (SOLID)
 
 <p align="center">
-  <img src="Diagramas/DiagramaSOLID.png" alt="Diagrama de classes com SOLID" width="600"/>
+  <img src="Diagramas/DiagramaDeClasseSOLID.png" alt="Diagrama de classes com SOLID" width="600"/>
 </p>
 
 ---

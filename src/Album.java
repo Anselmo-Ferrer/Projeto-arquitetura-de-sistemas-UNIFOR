@@ -1,17 +1,29 @@
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 public class Album {
-    private int id;
+    private String id;
     private String nome;
     private Date dataCriacao;
+    private List<Midia> midias;
 
-    public int getId() {
-        return id;
+    public Album() {
+        this.id = UUID.randomUUID().toString();
+        this.dataCriacao = new Date();
+        this.midias = new ArrayList<>();
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public Album(String nome) {
+        this.id = UUID.randomUUID().toString();
+        this.nome = nome;
+        this.dataCriacao = new Date();
+        this.midias = new ArrayList<>();
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getNome() {
@@ -31,14 +43,14 @@ public class Album {
     }
 
     public void adicionarMidia(Midia midia) {
-
+        midias.add(midia);
     }
 
     public void removerMidia(Midia midia) {
-
+        midias.remove(midia);
     }
 
-//    public List<Midia> listarMidias() {
-//
-//    }
+    public List<Midia> listarMidias() {
+        return midias;
+    }
 }
